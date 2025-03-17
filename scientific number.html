@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Scientific Number Identification</h2>
+    <p>Aprilia Nelcelyn Tabukang 
+      (231011060001)</p>
+
+    <input type="text" id="inputNumber" placeholder="Input Number...">
+    <button onclick="validateNumber()">Cek</button>
+
+    <p id="message"></p>
+
+    <script>
+        function validateNumber() {
+            let input = document.getElementById("inputNumber").value.trim();
+            let scientificRegex = /^[+-]?\d+(\.\d+)?(e[+-]?\d+)?$/i;
+
+            if (scientificRegex.test(input)) {
+                document.getElementById("message").textContent = "Yes, it is a number";
+                document.getElementById("message").style.color = "green";
+            } else {
+                document.getElementById("message").textContent = "No, it is not a number";
+                document.getElementById("message").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
